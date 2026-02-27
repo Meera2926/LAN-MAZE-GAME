@@ -1,11 +1,19 @@
 # Changelog - LAN Maze Game
 
-## [1.0.0] - 2025-12-08
+## [1.3.0] - 2026-02-27
 ### Added
-- Procedural maze generation algorithms: Recursive Backtracker (DFS) and Prim's algorithm.
-- AI bot challengers with configurable difficulty tiers (Easy, Medium, Hard).
-- A* (A-Star), BFS, and Dijkstra pathfinding solvers.
-- Robust TCP socket network protocol with heartbeat keep-alive packets.
-- In-game power-up mechanics: Speed Boost, Ghost Mode, Portals, and Combos.
-- High-score leaderboard manager with descending score sorting.
-- Maven build configuration with automated JUnit 5 test suite and GitHub Actions CI.
+- ShieldPowerUp granting temporary invulnerability against spike traps and freeze spells.
+- Fog of War dynamic sight radius and darkness occlusion rendering mode.
+- In-game AchievementTracker with milestone badges (First Win, Speed Demon, Coin Hoarder).
+- ChatPacket enabling lobby communication and tactical quick-chat wheel.
+- Memory-efficient Eller's algorithm maze generator.
+- CompassItem pointing players toward the escape portal.
+- ReconnectManager for LAN connection dropouts and state preservation.
+
+## [1.2.0] - 2025-12-16
+### Added
+- Traps, Spectator Mode, Theme palettes, and MatchStatistics.
+
+## [1.1.0] - 2025-12-05
+### Added
+- Multi-algorithm maze generation and A* AI bot pathfinding.

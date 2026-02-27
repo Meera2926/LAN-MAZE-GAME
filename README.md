@@ -1,68 +1,49 @@
-# 🏃‍♂️ LAN Maze Game - Real-time Multiplayer Maze Escape
+# 🏃💨 LAN Maze Escape Game (v1.3.0)
 
-[![Java CI with Maven](https://github.com/Meera2926/LAN-MAZE-GAME/actions/workflows/maven_ci.yml/badge.svg)](https://github.com/Meera2926/LAN-MAZE-GAME/actions)
-[![Language](https://img.shields.io/badge/Language-Java_17-orange.svg)](https://www.oracle.com/java/)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/Meera2926/LAN-MAZE-GAME)
+[![Java Version](https://img.shields.io/badge/Java-17%2B-blue.svg)](https://openjdk.org)
+[![Multiplayer](https://img.shields.io/badge/Multiplayer-LAN%20Sockets-orange.svg)](docs/NETWORK_PROTOCOL.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A real-time multiplayer 2D maze game developed in Java Swing, designed for competitive play over a Local Area Network (LAN). Players race against each other and autonomous AI bots to collect coins, avoid traps, use power-ups, and escape the labyrinth.
+A high-performance LAN multiplayer maze escape runner developed in Java Swing with custom TCP socket networking, AI bot adversaries, procedural labyrinth generators, dynamic fog of war, and rich interactive mechanics.
 
 ---
 
 ## 🎮 Key Features
 
-- **🌐 LAN Multiplayer**: Seamless client-server architecture over TCP sockets with 20Hz tick synchronization.
-- **🌀 Procedural Generation**: Infinite unique labyrinths powered by Recursive Backtracking & Prim's algorithms.
-- **🤖 Autonomous AI Bots**: Intelligent computer competitors powered by A* heuristic pathfinding and BFS.
-- **⚡ Dynamic Power-Ups**: Speed Boost, Ghost Phasing, paired teleportation portals, and Freeze Debuffs.
-- **⚠️ Hazard Traps**: Spike traps inflicting temporary movement debuffs on careless runners.
-- **👁️ Spectator Mode**: Real-time spectator view for eliminated competitors.
-- **🏆 Persistent Leaderboards**: Real-time scoring, coin combo streaks, and top player rankings.
-- **🎨 Custom Visual Themes**: Classic Stone, Neon Cyberpunk, and Dungeon Dark themes.
+- **🌐 Real-Time LAN Multiplayer**: Custom TCP socket protocol with binary packet serialization, latency tracking, and zero lag.
+- **🛡️ Shield & Power-Up System**: Speed boosts, freeze spells, portal teleporters, and invulnerability shields.
+- **🌫️ Fog of War Stealth Mode**: Dynamic circular visibility radius with explored tile memory.
+- **🏆 In-Game Achievements**: Unlockable trophies tracking speed, evasion, and coin hoarding feats.
+- **🧩 Procedural Maze Generation**: Recursive Backtracking, Prim's, Kruskal's, and Eller's algorithms.
+- **🤖 Heuristic AI Bots**: Autonomous computer runners powered by A*, Dijkstra, and BFS solvers.
+- **💬 Match Chat & Quick Wheel**: Lobby and in-match messaging with low-overhead packet encoding.
+- **🔄 LAN Reconnection**: Seamless session snapshot recovery across brief network interruptions.
 
 ---
 
-## 🕹️ Controls
-
-| Action | Key / Input |
-| :--- | :--- |
-| **Move Up** | `W` or `Up Arrow` |
-| **Move Down** | `S` or `Down Arrow` |
-| **Move Left** | `A` or `Left Arrow` |
-| **Move Right** | `D` or `Right Arrow` |
-| **Use Power-up** | `Spacebar` |
-| **Pause / Menu** | `Escape` |
-
----
-
-## 🚀 Quick Start
+## 🚀 How to Run
 
 ```bash
-# 1. Clone repository
-git clone https://github.com/Meera2926/LAN-MAZE-GAME.git
-cd LAN-MAZE-GAME
+# 1. Start Server
+java -cp target/classes maze.network.Server 8080
 
-# 2. Build with Maven
-mvn clean package
+# 2. Start Client (Player 1)
+java -cp target/classes maze.ui.MazeRunnerSwingClient
 
-# 3. Start Server
-java Server
-
-# 4. Start Client
-java MazeRunnerSwingClient
+# 3. Start Client (Player 2 on another machine)
+java -cp target/classes maze.ui.MazeRunnerSwingClient <SERVER_IP> 8080
 ```
 
 ---
 
-## 📚 Technical Documentation
-- [Maze Generation Algorithms](docs/MAZE_GENERATION_ALGORITHMS.md)
-- [Pathfinding & Solver Benchmarks](docs/PATHFINDING_BENCHMARKS.md)
-- [Multiplayer Network Protocol](docs/MULTIPLAYER_NETWORK_PROTOCOL.md)
-- [Game Balance & Power-Ups](docs/GAME_BALANCE_AND_POWERUPS.md)
-- [Themes & Skins Guide](docs/MAZE_THEMES_AND_SKINS.md)
-- [AI Pathfinding Guide](docs/AI_PATHFINDING_GUIDE.md)
-- [Server Hosting Guide](docs/SERVER_HOSTING_GUIDE.md)
+## 📚 Documentation
+- [Achievement Guide](docs/ACHIEVEMENTS_GUIDE.md)
+- [Fog of War Specifications](docs/FOG_OF_WAR_SPECS.md)
+- [Network Packet Protocol](docs/NETWORK_PROTOCOL.md)
+- [Bot Customization Guide](docs/BOT_EXTENSION_GUIDE.md)
 
 ---
 
 ## 📄 License
-This project is open-source under the MIT License.
+Open source under the [MIT License](LICENSE).
